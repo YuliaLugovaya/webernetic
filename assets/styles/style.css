@@ -104,20 +104,103 @@ body {
 }
 
 .modal__content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 5% auto;
+  padding: 25px;
+  background-color: #F0F4FC;
 }
 
 .modal__close {
+  display: flex;
+  align-self: end;
+  background-color: #FFFFFF;
+  padding: 15px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
-.modal__close:hover {
-  color: black;
+.modal__title {
+  margin: 0px 0px 20px 0px;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 3rem;
+  color: #323232;
+}
+
+.modal__input {
+  padding: 25px;
+  margin-bottom: 5px;
+  background-color: #D7E2F6;
+  border-radius: 10px;
+  border: 1px solid #D7E2F6;
+}
+.modal__input::placeholder {
+  color: #1F4284;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.modal__input:focus-visible {
+  outline: none;
+  border: 1px solid #1F4284;
+}
+
+.modal__checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.modal__checkbox {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #323232;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+.modal__checkbox:checked {
+  background-color: #323232;
+}
+.modal__checkbox + .modal__checkbox-label {
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+.modal__link {
+  margin: 25px 0px 25px 0px;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #244C98;
   text-decoration: none;
+}
+
+.modal__button {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 5px;
+  color: #FFFFFF;
+  background-color: #244C98;
+  border: 1px solid #244C98;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.modal__button:hover {
+  background-color: transparent;
+  color: #244C98;
+  transition: 0.3s ease;
+}
+
+.modal__button_transparent {
+  color: #244C98;
+  background-color: transparent;
+}
+.modal__button_transparent:hover {
+  background-color: #244C98;
+  color: #FFFFFF;
 }
 
 @media screen and (max-width: 1200px) {

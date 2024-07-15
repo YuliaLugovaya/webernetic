@@ -20,7 +20,7 @@
         <div class="demo__description-wrapper">
           <div class="demo__description">
             <h2 class="demo__title">Демо-версия</h2>
-            <p class="demo__text">За 18 лет деятельности было реализовано более 500 крупных, а так же, не менее 2500
+            <p class="demo__text">За 18 лет деятельности было реализовано более 500 крупных, а также не менее 2500
               средних и малых проектов. Используя знания и накопленный опыт мы можем предложить</p>
             <button class="demo__button">
               <p class="demo__button-text">Попробовать бесплатно</p>
@@ -34,9 +34,20 @@
       </section>
       <section class="modal">
         <div class="modal__content">
-          <img class="modal__close" src="./assets/icons/modal_close.svg" alt="Close">
-          <h3>Войти в систему</h3>
-      </div>
+          <div class="modal__close">
+            <img class="modal__close-icon" src="./assets/icons/modal_close.svg" alt="Close">
+          </div>
+          <h3 class="modal__title">Войти в систему</h3>
+          <input type="text" class="modal__input" placeholder="Email/Телефон">
+          <input type="password" class="modal__input" placeholder="Пароль">
+          <div class="modal__checkbox-wrapper">
+            <input type="checkbox" id="rememberPassword" class="modal__checkbox">
+            <label for="rememberPassword" class="modal__checkbox-label">Запомнить пароль</label>
+          </div>
+          <a class="modal__link" href="#">Восстановить</a>
+          <button class="modal__button">Войти</button>
+          <button class="modal__button modal__button_transparent">Зарегистрироваться</button>
+        </div>
       </section>
     </main>
   </div>
