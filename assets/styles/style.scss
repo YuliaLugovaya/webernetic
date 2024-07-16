@@ -83,8 +83,8 @@ body {
   transition: 0.3s ease;
 
   &:hover {
-    background-color: transparent;
-    color: $button-color;
+    background-color: $input-color;
+    color: $input-text-color;
     transition: 0.3s ease;
   }
 }
@@ -168,6 +168,7 @@ body {
 
 .modal__checkbox {
   appearance: none;
+  position: relative;
   width: 18px;
   height: 18px;
   border: 2px solid $modal-text-color;
@@ -176,7 +177,20 @@ body {
   cursor: pointer;
 
   &:checked {
-    background-color: $modal-text-color;
+    background-color: transparent;
+  }
+
+  &:checked::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid $modal-text-color;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
   }
 
   & + .modal__checkbox-label {
@@ -205,8 +219,8 @@ body {
   transition: 0.3s ease;
 
   &:hover {
-    background-color: transparent;
-    color: $button-color;
+    background-color: $input-color;
+    color: $input-text-color;
     transition: 0.3s ease;
   }
 }
@@ -214,11 +228,6 @@ body {
 .modal__button_transparent {
   color: $button-color;
   background-color: transparent;
-
-  &:hover {
-    background-color: $button-color;
-    color: $button-text-color;
-  }
 }
 
 @media screen and (max-width: 1200px) {

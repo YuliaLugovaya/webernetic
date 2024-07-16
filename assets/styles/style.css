@@ -72,8 +72,8 @@ body {
   transition: 0.3s ease;
 }
 .demo__button:hover {
-  background-color: transparent;
-  color: #244C98;
+  background-color: #D7E2F6;
+  color: #1F4284;
   transition: 0.3s ease;
 }
 
@@ -154,6 +154,7 @@ body {
 
 .modal__checkbox {
   appearance: none;
+  position: relative;
   width: 18px;
   height: 18px;
   border: 2px solid #323232;
@@ -162,7 +163,19 @@ body {
   cursor: pointer;
 }
 .modal__checkbox:checked {
-  background-color: #323232;
+  background-color: transparent;
+}
+.modal__checkbox:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #323232;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 .modal__checkbox + .modal__checkbox-label {
   margin-left: 15px;
@@ -189,18 +202,14 @@ body {
   transition: 0.3s ease;
 }
 .modal__button:hover {
-  background-color: transparent;
-  color: #244C98;
+  background-color: #D7E2F6;
+  color: #1F4284;
   transition: 0.3s ease;
 }
 
 .modal__button_transparent {
   color: #244C98;
   background-color: transparent;
-}
-.modal__button_transparent:hover {
-  background-color: #244C98;
-  color: #FFFFFF;
 }
 
 @media screen and (max-width: 1200px) {
