@@ -80,13 +80,6 @@ body {
   border: 1px solid $button-color;
   border-radius: 6rem;
   cursor: pointer;
-  transition: 0.3s ease;
-
-  &:hover {
-    background-color: $input-color;
-    color: $input-text-color;
-    transition: 0.3s ease;
-  }
 }
 
 .demo__button-text {
@@ -113,13 +106,14 @@ body {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
 }
 
 .modal__content {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
-  margin: 5% auto;
+  width: 500px;
   padding: 25px;
   background-color: $modal-color;
 }
@@ -216,13 +210,6 @@ body {
   border: 1px solid $button-color;
   border-radius: 4px;
   cursor: pointer;
-  transition: 0.3s ease;
-
-  &:hover {
-    background-color: $input-color;
-    color: $input-text-color;
-    transition: 0.3s ease;
-  }
 }
 
 .modal__button_transparent {
@@ -256,6 +243,26 @@ body {
     height: 600px;
     object-fit: cover;
     border-radius: 0px 0px 10px 10px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .demo__button {
+    transition: 0.3s ease;
+    &:hover {
+      background-color: $input-color;
+      color: $input-text-color;
+      transition: 0.3s ease;
+    }
+  }
+
+  .modal__button {
+    transition: 0.3s ease;
+    &:hover {
+      background-color: $input-color;
+      color: $input-text-color;
+      transition: 0.3s ease;
+    }
   }
 }
 
@@ -307,5 +314,13 @@ body {
     margin: 15px 0;
     font-size: 1.3rem;
     line-height: 20px;
+  }
+
+  .modal__close {
+    margin-top: 25px;
+  }
+
+  .modal__content {
+    height: 100%;
   }
 }

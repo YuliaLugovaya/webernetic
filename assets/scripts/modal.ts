@@ -22,7 +22,7 @@ const inputs = document.querySelectorAll("input");
 
 const openModal = () => {
   if (modal) {
-    modal.style.display = "block";
+    modal.style.display = "flex";
   }
 };
 

@@ -9,7 +9,7 @@ var passwordInput = document.querySelector('[type="password"]');
 var inputs = document.querySelectorAll("input");
 var openModal = function () {
     if (modal) {
-        modal.style.display = "block";
+        modal.style.display = "flex";
     }
 };
 var closeModal = function () {
@@ -48,19 +48,9 @@ if (loginButton !== null) {
             closeModal();
         }
         else {
-            // if (emailInput.value.trim() === '') {
-            //   emailInput.style.border = '1px solid red';
-            // } else {
-            //   emailInput.style.border = '';
-            // }
             emailInput.value.trim() === ""
                 ? (emailInput.style.border = "1px solid red")
                 : (emailInput.style.border = "");
-            // if (passwordInput.value.trim() === "") {
-            //   passwordInput.style.border = "1px solid red";
-            // } else {
-            //   passwordInput.style.border = "";
-            // }
             passwordInput.value.trim() === ""
                 ? (passwordInput.style.border = "1px solid red")
                 : (passwordInput.style.border = "");

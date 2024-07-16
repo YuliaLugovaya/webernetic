@@ -69,12 +69,6 @@ body {
   border: 1px solid #244C98;
   border-radius: 6rem;
   cursor: pointer;
-  transition: 0.3s ease;
-}
-.demo__button:hover {
-  background-color: #D7E2F6;
-  color: #1F4284;
-  transition: 0.3s ease;
 }
 
 .demo__button-text {
@@ -101,13 +95,14 @@ body {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
 }
 
 .modal__content {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
-  margin: 5% auto;
+  width: 500px;
   padding: 25px;
   background-color: #F0F4FC;
 }
@@ -199,12 +194,6 @@ body {
   border: 1px solid #244C98;
   border-radius: 4px;
   cursor: pointer;
-  transition: 0.3s ease;
-}
-.modal__button:hover {
-  background-color: #D7E2F6;
-  color: #1F4284;
-  transition: 0.3s ease;
 }
 
 .modal__button_transparent {
@@ -234,6 +223,24 @@ body {
     height: 600px;
     object-fit: cover;
     border-radius: 0px 0px 10px 10px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .demo__button {
+    transition: 0.3s ease;
+  }
+  .demo__button:hover {
+    background-color: #D7E2F6;
+    color: #1F4284;
+    transition: 0.3s ease;
+  }
+  .modal__button {
+    transition: 0.3s ease;
+  }
+  .modal__button:hover {
+    background-color: #D7E2F6;
+    color: #1F4284;
+    transition: 0.3s ease;
   }
 }
 @media screen and (max-width: 900px) {
@@ -275,6 +282,12 @@ body {
     margin: 15px 0;
     font-size: 1.3rem;
     line-height: 20px;
+  }
+  .modal__close {
+    margin-top: 25px;
+  }
+  .modal__content {
+    height: 100%;
   }
 }
 
