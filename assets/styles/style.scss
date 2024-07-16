@@ -71,7 +71,7 @@ body {
 }
 
 .demo__button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 50px;
   padding: 10px;
@@ -133,6 +133,11 @@ body {
   font-weight: 500;
   line-height: 3rem;
   color: $modal-text-color;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
 }
 
 .modal__input {
