@@ -1,7 +1,9 @@
 {
   "scripts": {
     "deploy": "npx gh-pages -d dist",
-    "build": "node-sass --output-style compressed -o dist assets/styles"
+    "build": "npm run build:assets && npm run build:html",
+    "build:assets": "cp -r assets dist/assets",
+    "build:html": "cp index.html dist/index.html"
   },
   "devDependencies": {
     "gh-pages": "^6.1.1",
