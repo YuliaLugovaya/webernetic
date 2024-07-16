@@ -1,9 +1,11 @@
 {
   "scripts": {
-    "deploy": "npx gh-pages -d dist"
+    "deploy": "npx gh-pages -d dist",
+    "build": "node-sass --output-style compressed -o dist assets/styles"
   },
   "devDependencies": {
     "gh-pages": "^6.1.1",
+    "node-sass": "^9.0.0",
     "typescript": "^5.5.3"
   }
 }
