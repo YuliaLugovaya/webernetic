@@ -1,5 +1,9 @@
 {
+  "scripts": {
+    "deploy": "npx gh-pages -d dist"
+  },
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "typescript": "^5.5.3"
   }
 }
