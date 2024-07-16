@@ -22,15 +22,15 @@
             <h2 class="demo__title">Демо-версия</h2>
             <p class="demo__text">За 18 лет деятельности было реализовано более 500 крупных, а также не менее 2500
               средних и малых проектов. Используя знания и накопленный опыт мы можем предложить</p>
-            <button class="demo__button">
+            <div class="demo__button">
               <p class="demo__button-text">Попробовать бесплатно</p>
               <div class="demo__button-arrow">
                 <img src="./assets/icons/arrow-up-right.svg" alt="Arrow">
               </div>
-            </button>
+            </div>
           </div>
         </div>
-        <img class="demo__image" src="./assets/images/demo_image.png" alt="Demo"></img>
+        <img class="demo__image" src="./assets/images/demo_image.png" alt="Demo">
       </section>
       <section class="modal">
         <div class="modal__content">
@@ -38,12 +38,14 @@
             <img class="modal__close-icon" src="./assets/icons/modal_close.svg" alt="Close">
           </div>
           <h3 class="modal__title">Войти в систему</h3>
-          <input type="text" class="modal__input" placeholder="Email/Телефон">
-          <input type="password" class="modal__input" placeholder="Пароль">
-          <div class="modal__checkbox-wrapper">
-            <input type="checkbox" id="rememberPassword" class="modal__checkbox">
-            <label for="rememberPassword" class="modal__checkbox-label">Запомнить пароль</label>
-          </div>
+          <form class="modal__form">
+            <input type="text" class="modal__input" placeholder="Email/Телефон" autocomplete="current-password">
+            <input type="password" class="modal__input" placeholder="Пароль" autocomplete="current-password">
+            <div class="modal__checkbox-wrapper">
+              <input type="checkbox" id="rememberPassword" class="modal__checkbox">
+              <label for="rememberPassword" class="modal__checkbox-label">Запомнить пароль</label>
+            </div>
+          </form>
           <a class="modal__link" href="#">Восстановить</a>
           <button class="modal__button">Войти</button>
           <button class="modal__button modal__button_transparent">Зарегистрироваться</button>

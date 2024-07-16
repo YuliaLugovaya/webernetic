@@ -1,0 +1,331 @@
+$text-color: #1F4284;
+$title-color: #1F4284;
+$button-color: #244C98;
+$button-text-color: #FFFFFF;
+$demo-color: #EBF0FA;
+$modal-color: #F0F4FC;
+$modal-text-color: #323232;
+$input-color: #D7E2F6;
+$input-text-color: #1F4284;
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 10px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 25px;
+  color: $text-color;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.demo {
+  display: flex;
+  gap: 20px;
+  height: 455px;
+  margin: 3.5rem 4rem;
+  background-color: $demo-color;
+  border-radius: 10px;
+}
+
+.demo__description-wrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.demo__description {
+  padding-left: 70px;
+}
+
+.demo__image {
+  width: 50%;
+  object-fit: cover;
+  border-radius: 0 10px 10px 0;
+}
+
+.demo__title {
+  margin: 0px;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 4rem;
+  color: $title-color;
+}
+
+.demo__text {
+  max-width: 510px;
+  margin: 20px 0 35px 0;
+}
+
+.demo__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 50px;
+  padding: 10px;
+  color: $button-text-color;
+  background-color: $button-color;
+  border: 1px solid $button-color;
+  border-radius: 6rem;
+  cursor: pointer;
+}
+
+.demo__button-text {
+  padding-left: 15px;
+  margin: 0px;
+}
+
+.demo__button-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  background-color: #FFFFFF;
+  border-radius: 4rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding: 25px;
+  background-color: $modal-color;
+}
+
+.modal__close {
+  display: flex;
+  align-self: end;
+  background-color: #FFFFFF;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.modal__title {
+  margin: 0px 0px 20px 0px;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 3rem;
+  color: $modal-text-color;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__input {
+  padding: 25px;
+  margin-bottom: 5px;
+  background-color: $input-color;
+  border-radius: 10px;
+  border: 1px solid $input-color;
+
+  &::placeholder {
+    color: $input-text-color;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border: 1px solid $input-text-color;
+  }
+}
+
+.modal__checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.modal__checkbox {
+  appearance: none;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border: 2px solid $modal-text-color;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+
+  &:checked {
+    background-color: transparent;
+  }
+
+  &:checked::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid $modal-text-color;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  & + .modal__checkbox-label {
+    margin-left: 15px;
+    font-size: 16px;
+  }
+}
+
+.modal__link {
+  margin: 25px 0px 25px 0px;
+  font-size: 2rem;
+  font-weight: 500;
+  color: $button-color;
+  text-decoration: none;
+}
+
+.modal__button {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 5px;
+  color: $button-text-color;
+  background-color: $button-color;
+  border: 1px solid $button-color;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal__button_transparent {
+  color: $button-color;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 1200px) {
+  .demo {
+    height: auto;
+    flex-direction: column;
+    margin: 2.5rem;
+    gap: 0px;
+  }
+
+  .demo__description-wrapper {
+    width: 100%;
+  }
+
+  .demo__description {
+    padding: 25px;
+  }
+
+  .demo__text {
+    max-width: 100%;
+    margin: 20px 0 25px 0;
+  }
+
+  .demo__image {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 0px 0px 10px 10px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .demo__button {
+    transition: 0.3s ease;
+    &:hover {
+      background-color: $input-color;
+      color: $input-text-color;
+      transition: 0.3s ease;
+    }
+  }
+
+  .modal__button {
+    transition: 0.3s ease;
+    &:hover {
+      background-color: $input-color;
+      color: $input-text-color;
+      transition: 0.3s ease;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .demo__image {
+    height: 450px;
+  }
+
+  .demo__title {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  .demo__text {
+    font-size: 1.5rem;
+  }
+
+  .demo__button {
+    gap: 20px;
+  }
+
+  .demo__button-text {
+    font-size: 1.5rem;
+    padding-left: 5px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .demo__image {
+    height: 360px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .demo {
+    margin: 1.5rem 2.5rem;
+  }
+
+  .demo__image {
+    height: auto;
+  }
+
+  .demo__title {
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+  }
+
+  .demo__text {
+    margin: 15px 0;
+    font-size: 1.3rem;
+    line-height: 20px;
+  }
+
+  .modal__close {
+    margin-top: 25px;
+  }
+
+  .modal__content {
+    height: 100%;
+  }
+}
