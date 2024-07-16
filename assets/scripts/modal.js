@@ -1,35 +1,76 @@
-var modal = document.querySelector('.modal');
-// modal.className = 'modal';
-// modal.innerHTML = `
-//   <div class="modal__content">
-//       <span class="modal__close">&times;</span>
-//       <h2>Войти в систему</h2>
-//       <!-- Добавьте форму для входа в систему -->
-//   </div>
-// `;
-// document.body.appendChild(modal);
+var demoButton = document.querySelector(".demo__button");
+var modal = document.querySelector(".modal");
+var closeButton = document.querySelector(".modal__close");
+var registerButton = document.querySelector(".modal__button.modal__button_transparent");
+var restoreLink = document.querySelector(".modal__link");
+var loginButton = document.querySelector(".modal__button");
+var emailInput = document.querySelector('[type="text"]');
+var passwordInput = document.querySelector('[type="password"]');
+var inputs = document.querySelectorAll("input");
 var openModal = function () {
     if (modal) {
-        modal.style.display = 'block';
+        modal.style.display = "block";
     }
 };
 var closeModal = function () {
     if (modal) {
-        modal.style.display = 'none';
+        modal.style.display = "none";
     }
 };
-var closeButton = modal === null || modal === void 0 ? void 0 : modal.querySelector('.modal__close');
-if (closeButton !== null) {
-    closeButton.addEventListener('click', closeModal);
+if (demoButton !== null) {
+    demoButton.addEventListener("click", openModal);
 }
-window.addEventListener('click', function (event) {
+if (closeButton !== null) {
+    closeButton.addEventListener("click", closeModal);
+}
+if (registerButton !== null) {
+    registerButton.addEventListener("click", function () {
+        emailInput.value = "";
+        passwordInput.value = "";
+        closeModal();
+    });
+}
+if (restoreLink !== null) {
+    restoreLink.addEventListener("click", function () {
+        emailInput.value = "";
+        passwordInput.value = "";
+        closeModal();
+    });
+}
+window.addEventListener("click", function (event) {
     if (event.target === modal) {
         closeModal();
     }
 });
-var demoButton = document.querySelector('.demo__button');
-if (demoButton !== null) {
-    demoButton.addEventListener('click', function () {
-        openModal();
+if (loginButton !== null) {
+    loginButton.addEventListener("click", function () {
+        if (emailInput.value.trim() !== "" && passwordInput.value.trim() !== "") {
+            closeModal();
+        }
+        else {
+            // if (emailInput.value.trim() === '') {
+            //   emailInput.style.border = '1px solid red';
+            // } else {
+            //   emailInput.style.border = '';
+            // }
+            emailInput.value.trim() === ""
+                ? (emailInput.style.border = "1px solid red")
+                : (emailInput.style.border = "");
+            // if (passwordInput.value.trim() === "") {
+            //   passwordInput.style.border = "1px solid red";
+            // } else {
+            //   passwordInput.style.border = "";
+            // }
+            passwordInput.value.trim() === ""
+                ? (passwordInput.style.border = "1px solid red")
+                : (passwordInput.style.border = "");
+        }
+    });
+    inputs.forEach(function (input) {
+        input.addEventListener("input", function () {
+            if (input.value.trim() !== "") {
+                input.style.border = "";
+            }
+        });
     });
 }
